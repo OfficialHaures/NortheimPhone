@@ -1,0 +1,4 @@
+name: Northeim-Phone
+version: '1.0'
+main: nl.officialhaures.northeimphone.Northeim_Phone
+api-version: '1.20'
