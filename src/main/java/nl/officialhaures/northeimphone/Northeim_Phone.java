@@ -11,9 +11,12 @@ public final class Northeim_Phone extends JavaPlugin {
 
     private PincodeManager pincodeManager;
     private PlayerData playerData;
-    private Northeim_Phone plugin;
+    public Northeim_Phone plugin;
     UUID playerId;
 
+    public Northeim_Phone(){
+        this.plugin = plugin;
+    }
     @Override
     public void onEnable() {
         plugin = this;
@@ -22,12 +25,12 @@ public final class Northeim_Phone extends JavaPlugin {
         pincodeManager.createTable();
         getServer().getPluginManager().registerEvents(new PhoneClick(plugin), this);
         // Plugin startup logic
-
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        saveConfig();
     }
 
     public PlayerData getPlayerData() {
