@@ -1,18 +1,20 @@
 package nl.officialhaures.northeimphone.manager;
 
+import nl.officialhaures.northeimphone.Northeim_Phone;
+
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 public class PincodeManager {
-
-    private static final String DB_USER = "u1_HvPBt2uOjL";
-    private static final String DB_PASS = "NUZoyCNA9^rDFPsnk^X5iYBg";
-    private static final String DB_PORT = "3306";
-    private static final String DB_IP     = "database.noviservers.com";
-    private static final String DB_NAME    = "s1_phone";
-    private static final String DB_URL = "jdbc:mysql://"+DB_IP+":"+DB_PORT+"/"+DB_NAME;
+    public static Northeim_Phone plugin;
+    private static final String DB_USER = plugin.getConfig().getString("database.username");
+    private static final String DB_PASS = plugin.getConfig().getString("database.password");
+    private static final String DB_PORT = plugin.getConfig().getString("database.port");
+    private static final String DB_IP   = plugin.getConfig().getString("database.ip");
+    private static final String DB_NAME = plugin.getConfig().getString("database.name");
+    private static final String DB_URL  = "jdbc:mysql://"+DB_IP+":"+DB_PORT+"/"+DB_NAME;
 
 
 
